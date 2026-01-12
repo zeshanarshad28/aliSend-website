@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,11 +21,16 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#privacy" class="nav-link">Privacy Policy</a></li>
-                    <li><a href="#terms" class="nav-link">Terms & Conditions</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#home" class="nav-link" data-translate="nav.home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-translate="nav.about">About Us</a></li>
+                    <li><a href="#privacy" class="nav-link" data-translate="nav.privacy">Privacy Policy</a></li>
+                    <li><a href="#terms" class="nav-link" data-translate="nav.terms">Terms & Conditions</a></li>
+                    <li><a href="#contact" class="nav-link" data-translate="nav.contact">Contact</a></li>
+                    <li class="language-switcher">
+                        <button class="lang-btn" id="langBtn" aria-label="Change language">
+                            <span id="currentLang">EN</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -35,11 +40,11 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Secure Money Remittance Services</h1>
-                <p class="hero-subtitle">Send money across borders with confidence, transparency, and regulatory compliance</p>
+                <h1 class="hero-title" data-translate="hero.title">Secure Money Remittance Services</h1>
+                <p class="hero-subtitle" data-translate="hero.subtitle">Send money across borders with confidence, transparency, and regulatory compliance</p>
                 <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Learn More</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                    <a href="#about" class="btn btn-primary" data-translate="hero.learnMore">Learn More</a>
+                    <a href="#contact" class="btn btn-secondary" data-translate="hero.contactUs">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -48,57 +53,57 @@
     <!-- About Us Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Us</h2>
+            <h2 class="section-title" data-translate="about.title">About Us</h2>
             <div class="content-wrapper">
                 <div class="content-text">
-                    <p>AliSend Ltd is a UK-based company specialising in money remittance services, established to deliver secure, reliable, and regulatory-compliant digital financial solutions that enable individuals to send money across borders with confidence and ease.</p>
+                    <p data-translate="about.intro1">AliSend Ltd is a UK-based company specialising in money remittance services, established to deliver secure, reliable, and regulatory-compliant digital financial solutions that enable individuals to send money across borders with confidence and ease.</p>
                     
-                    <p>Operating from the United Kingdom, we are fully committed to complying with all applicable laws and regulatory requirements, including Anti-Money Laundering (AML) and Know Your Customer (KYC) obligations, as well as consumer and data protection regulations.</p>
+                    <p data-translate="about.intro2">Operating from the United Kingdom, we are fully committed to complying with all applicable laws and regulatory requirements, including Anti-Money Laundering (AML) and Know Your Customer (KYC) obligations, as well as consumer and data protection regulations.</p>
                     
-                    <p>At AliSend, compliance and security are at the core of our business model. We utilise advanced technology systems for identity verification, transaction monitoring, and risk management to ensure the integrity of our services and the protection of our customers and their funds at all times.</p>
+                    <p data-translate="about.intro3">At AliSend, compliance and security are at the core of our business model. We utilise advanced technology systems for identity verification, transaction monitoring, and risk management to ensure the integrity of our services and the protection of our customers and their funds at all times.</p>
                 </div>
 
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <h3>Our Approach</h3>
-                        <p>We believe money transfers should be:</p>
+                        <h3 data-translate="about.approach.title">Our Approach</h3>
+                        <p data-translate="about.approach.intro">We believe money transfers should be:</p>
                         <ul>
-                            <li>Clear and transparent, with no hidden fees</li>
-                            <li>Fast and simple, without unnecessary complexity</li>
-                            <li>Secure and aligned with the highest regulatory standards</li>
-                            <li>Supported by effective monitoring and control systems</li>
+                            <li data-translate="about.approach.item1">Clear and transparent, with no hidden fees</li>
+                            <li data-translate="about.approach.item2">Fast and simple, without unnecessary complexity</li>
+                            <li data-translate="about.approach.item3">Secure and aligned with the highest regulatory standards</li>
+                            <li data-translate="about.approach.item4">Supported by effective monitoring and control systems</li>
                         </ul>
                     </div>
 
                     <div class="feature-card">
-                        <h3>Our Vision</h3>
-                        <p>To build a globally trusted money remittance platform that combines technology, compliance, and user experience, setting a new standard for digital financial services.</p>
+                        <h3 data-translate="about.vision.title">Our Vision</h3>
+                        <p data-translate="about.vision.text">To build a globally trusted money remittance platform that combines technology, compliance, and user experience, setting a new standard for digital financial services.</p>
                     </div>
 
                     <div class="feature-card">
-                        <h3>Our Mission</h3>
-                        <p>To provide digital money transfer services that are:</p>
+                        <h3 data-translate="about.mission.title">Our Mission</h3>
+                        <p data-translate="about.mission.intro">To provide digital money transfer services that are:</p>
                         <ul>
-                            <li>Fully compliant with regulatory requirements</li>
-                            <li>Reliable and scalable</li>
-                            <li>Easy to use</li>
-                            <li>Designed to meet the needs of customers worldwide</li>
+                            <li data-translate="about.mission.item1">Fully compliant with regulatory requirements</li>
+                            <li data-translate="about.mission.item2">Reliable and scalable</li>
+                            <li data-translate="about.mission.item3">Easy to use</li>
+                            <li data-translate="about.mission.item4">Designed to meet the needs of customers worldwide</li>
                         </ul>
                     </div>
 
                     <div class="feature-card">
-                        <h3>Our Values</h3>
+                        <h3 data-translate="about.values.title">Our Values</h3>
                         <ul>
-                            <li><strong>Compliance First:</strong> Operating in full accordance with applicable laws and regulations</li>
-                            <li><strong>Security:</strong> Protecting customer funds and data as a top priority</li>
-                            <li><strong>Transparency:</strong> Clear fees and fair exchange rates</li>
-                            <li><strong>Responsibility:</strong> Ethical and legal responsibility towards our customers</li>
+                            <li><strong data-translate="about.values.compliance.label">Compliance First:</strong> <span data-translate="about.values.compliance.text">Operating in full accordance with applicable laws and regulations</span></li>
+                            <li><strong data-translate="about.values.security.label">Security:</strong> <span data-translate="about.values.security.text">Protecting customer funds and data as a top priority</span></li>
+                            <li><strong data-translate="about.values.transparency.label">Transparency:</strong> <span data-translate="about.values.transparency.text">Clear fees and fair exchange rates</span></li>
+                            <li><strong data-translate="about.values.responsibility.label">Responsibility:</strong> <span data-translate="about.values.responsibility.text">Ethical and legal responsibility towards our customers</span></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="company-info">
-                    <p><strong>AliSend Ltd</strong> is incorporated in England and Wales under company number 16782887, with its registered office in London, United Kingdom.</p>
+                    <p><strong>AliSend Ltd</strong> <span data-translate="about.companyInfo">is incorporated in England and Wales under company number 16782887, with its registered office in London, United Kingdom.</span></p>
                 </div>
             </div>
         </div>
@@ -107,11 +112,11 @@
     <!-- Privacy Policy Section -->
     <section id="privacy" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Privacy Policy</h2>
+            <h2 class="section-title" data-translate="privacy.title">Privacy Policy</h2>
             <div class="content-wrapper">
-                <p class="last-updated">Last updated: 13/01/2026</p>
+                <p class="last-updated"><span data-translate="privacy.lastUpdated">Last updated:</span> 13/01/2026</p>
                 
-                <div class="legal-content">
+                <div class="legal-content" id="privacyContent" data-translate="privacy.content">
                     <p>This Privacy Policy explains how AliSend Ltd ("AliSend", "we", "us", or "our") collects, uses, stores, and protects personal data when you use our money remittance services.</p>
                     
                     <p>We are committed to protecting your privacy and processing personal data in accordance with the UK General Data Protection Regulation (UK GDPR) and applicable data protection laws.</p>
@@ -231,11 +236,11 @@
     <!-- Terms & Conditions Section -->
     <section id="terms" class="section">
         <div class="container">
-            <h2 class="section-title">Terms and Conditions</h2>
+            <h2 class="section-title" data-translate="terms.title">Terms and Conditions</h2>
             <div class="content-wrapper">
-                <p class="last-updated">Last updated: 13/01/2026</p>
+                <p class="last-updated"><span data-translate="terms.lastUpdated">Last updated:</span> 13/01/2026</p>
                 
-                <div class="legal-content">
+                <div class="legal-content" id="termsContent" data-translate="terms.content">
                     <p>These Terms and Conditions ("Terms") govern your access to and use of the services provided by AliSend Ltd ("AliSend", "we", "us", or "our"). By using our services, you agree to be bound by these Terms.</p>
                     
                     <p>If you do not agree, you must not use our services.</p>
@@ -398,7 +403,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title" data-translate="contact.title">Contact Us</h2>
             <div class="content-wrapper">
                 <div class="contact-info">
                     <div class="contact-card">
@@ -424,13 +429,13 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>AliSend</h3>
-                    <p>Secure Money Remittance Services</p>
+                    <p data-translate="footer.tagline">Secure Money Remittance Services</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#about">About Us</a>
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms & Conditions</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about" data-translate="footer.about">About Us</a>
+                    <a href="#privacy" data-translate="footer.privacy">Privacy Policy</a>
+                    <a href="#terms" data-translate="footer.terms">Terms & Conditions</a>
+                    <a href="#contact" data-translate="footer.contact">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -439,6 +444,7 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
