@@ -68,25 +68,34 @@ window.addEventListener('scroll', () => {
 const sections = document.querySelectorAll('.section, .hero');
 const navLinksArray = Array.from(navLinks);
 
-window.addEventListener('scroll', () => {
+function updateActiveNavLink() {
     let current = '';
-    const navHeight = navbar.offsetHeight;
+    const navHeight = navbar ? navbar.offsetHeight : 0;
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
-        if (window.pageYOffset >= (sectionTop - navHeight - 100)) {
+        // Consider section "current" when scroll position is past section top minus offset
+        if (scrollPos >= sectionTop - navHeight - 80) {
             current = section.getAttribute('id');
         }
     });
     
     navLinksArray.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        const href = link.getAttribute('href') || '';
+        // Match #sectionId or sectionId.html (for same-page sections)
+        if (href === `#${current}` || href === `${current}.html`) {
             link.classList.add('active');
         }
     });
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+// Run once on load in case a section is already in view (e.g. hash in URL)
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(updateActiveNavLink, 100);
 });
 
 // Fade in animation on scroll
@@ -104,9 +113,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe feature cards and content sections
+// Observe feature cards and contact card only (not legal-content so Privacy/Terms are visible when scrolled to)
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.feature-card, .legal-content, .contact-card');
+    const animatedElements = document.querySelectorAll('.feature-card, .contact-card');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -286,14 +295,27 @@ function setLanguage(lang) {
         
         // Special handling for legal content - we'll update the existing HTML structure
         if (key === 'privacy.content' || key === 'terms.content') {
-            // For legal content, we keep the structure and update text
-            // The content will be handled by updating individual elements
-            // For now, we'll use a simpler approach - replace the entire content
+            // Check if we're on a separate page (privacy.html or terms.html)
+            const isSeparatePage = window.location.pathname.includes('privacy.html') || 
+                                   window.location.pathname.includes('terms.html');
+            
+            // Check if element already has substantial HTML content
+            const hasExistingContent = element.innerHTML.trim().length > 500;
+            
             const content = translations[lang][key];
+            
             if (content) {
-                // Parse and format the content
-                const formattedContent = formatLegalContent(content, lang);
-                element.innerHTML = formattedContent;
+                // On separate pages, only update if content is missing or very short
+                // This preserves the full HTML content that's already there
+                if (isSeparatePage && hasExistingContent) {
+                    // Keep existing content, don't replace
+                    // Content is already in HTML format on separate pages
+                    return; // Skip replacement
+                } else {
+                    // On index page or if content is missing, format and replace
+                    const formattedContent = formatLegalContent(content, lang);
+                    element.innerHTML = formattedContent;
+                }
             }
         } else {
             const translation = translations[lang][key];
